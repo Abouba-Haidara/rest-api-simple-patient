@@ -1,6 +1,8 @@
 require('dotenv').config(); // this loads the defined variables from .env
+
 const config = {
- url: "http://localhost:9222/patients" // DATABASE URL 
+    url: process.env.DATABASE_URL
 }
+console.log(config)
 
 module.exports = config;
