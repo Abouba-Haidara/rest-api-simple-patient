@@ -54,7 +54,7 @@ exports.findAll = async (req, res, next) => {
         .catch(err => console.log(err))
 };
 
-// Delete all Alert from the database.
+
 exports.deleteAll = (req, res) => {
     Patient.deleteMany({})
     .then(data => {
@@ -104,6 +104,7 @@ exports.update = (req, res) => {
   const telephone = req.body.firstname;
   const lastname = req.body.firstname;
   const firstname = req.body.firstname;
+  const address = req.body.address;
 
   Patient.findOneAndUpdate(
     { _id: req.params.id},
@@ -111,7 +112,8 @@ exports.update = (req, res) => {
       $set: {
         firstname: telephone,
         lastname: lastname,
-        firstname: firstname
+        firstname: firstname,
+        address: address
       }
     },
     { new: true },
