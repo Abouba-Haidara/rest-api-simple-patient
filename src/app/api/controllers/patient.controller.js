@@ -101,8 +101,8 @@ exports.update = (req, res) => {
     });
   }
 
-  const telephone = req.body.firstname;
-  const lastname = req.body.firstname;
+  const telephone = req.body.telephone;
+  const lastname = req.body.lastname;
   const firstname = req.body.firstname;
   const address = req.body.address;
 
@@ -110,10 +110,10 @@ exports.update = (req, res) => {
     { _id: req.params.id},
     {
       $set: {
-        firstname: telephone,
         lastname: lastname,
         firstname: firstname,
-        address: address
+        address: address,
+        telephone: telephone
       }
     },
     { new: true },
